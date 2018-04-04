@@ -20,17 +20,16 @@ public class Planeta implements Serializable {
 
 	private String terreno;
 
-	private Integer aparicoes;
+	private Integer numeroAparicoes;
 
 	public Planeta() {
 	}
 
-	public Planeta(String nome, String clima, String terreno, Integer aparicoes) {
+	public Planeta(String nome, String clima, String terreno) {
 		super();
 		this.nome = nome;
 		this.clima = clima;
 		this.terreno = terreno;
-		this.aparicoes = aparicoes;
 	}
 
 	public BigInteger getId() {
@@ -65,12 +64,12 @@ public class Planeta implements Serializable {
 		this.terreno = terreno;
 	}
 
-	public Integer getAparicoes() {
-		return aparicoes;
+	public Integer getNumeroAparicoes() {
+		return numeroAparicoes;
 	}
 
-	public void setAparicoes(Integer aparicoes) {
-		this.aparicoes = aparicoes;
+	public void setNumeroAparicoes(Integer numeroAparicoes) {
+		this.numeroAparicoes = numeroAparicoes;
 	}
 
 }

@@ -32,8 +32,8 @@ public class DesafioApplicationTests {
 
 	@Before
 	public void setUp() throws Exception {
-		Planeta p1 = new Planeta("Tatooine", "arid", "desert", null);
-		Planeta p2 = new Planeta("Alderaan", "temperate", "grasslands, mountains", null);
+		Planeta p1 = new Planeta("Tatooine", "arid", "desert");
+		Planeta p2 = new Planeta("Alderaan", "temperate", "grasslands, mountains");
 		assertNull(p1.getId());
 		assertNull(p2.getId());
 		p1.setId(new BigInteger("1"));
@@ -52,7 +52,7 @@ public class DesafioApplicationTests {
 	
 	@Test
 	public void testSave() {
-		Planeta p3 = new Planeta("Yavin IV", "temperate, tropical", "jungle, rainforests", null);
+		Planeta p3 = new Planeta("Yavin IV", "temperate, tropical", "jungle, rainforests");
 		assertNull(p3.getId());
 		this.planetaRepository.save(p3);
 		assertNotNull(p3.getId());
