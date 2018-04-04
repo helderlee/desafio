@@ -1,5 +1,6 @@
 package pro.helderlee.desafio.resource;
 
+import java.math.BigInteger;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class PlanetaResource {
 
 	@GET
 	@Path("/{id}")
-	public Planeta buscarPlanetaPorId(@PathParam("id") Long id) {
+	public Planeta buscarPlanetaPorId(@PathParam("id") BigInteger id) {
 		return this.planetaService.buscarPorId(id);
 	}
 
@@ -58,7 +59,7 @@ public class PlanetaResource {
 	
 	@DELETE
 	@Path("/{id}")
-	public Response removerPlaneta(@PathParam("id") Long id) {
+	public Response removerPlaneta(@PathParam("id") BigInteger id) {
 		this.planetaService.removerPlaneta(id);
 		return Response.ok().build();
 	}

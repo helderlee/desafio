@@ -1,5 +1,6 @@
 package pro.helderlee.desafio.service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import pro.helderlee.desafio.modelo.Planeta;
@@ -10,9 +11,9 @@ public interface PlanetaService {
 	
 	void adicionarPlaneta(Planeta planeta);
 	
-	void removerPlaneta(Long id);
+	void removerPlaneta(BigInteger id);
 	
 	List<Planeta> buscarPorNome(String nome);
 	
-	Planeta buscarPorId(Long id);
+	Planeta buscarPorId(BigInteger id);
 }

@@ -8,7 +8,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pro.helderlee.desafio.integration.TopicPublisher;
 import pro.helderlee.desafio.modelo.Planeta;
+import pro.helderlee.desafio.modelo.SwapiPlanetMessage;
 import pro.helderlee.desafio.repository.PlanetaRepository;
 import pro.helderlee.desafio.service.PlanetaService;
 
@@ -17,6 +19,9 @@ public class PlanetaServiceImpl implements PlanetaService {
 
 	@Autowired
 	private PlanetaRepository planetaRepository;
+	
+	@Autowired
+	private TopicPublisher publisher;
 
 	@Override
 	public List<Planeta> listarPlanetas() {
@@ -29,12 +34,17 @@ public class PlanetaServiceImpl implements PlanetaService {
 
 	@Override
 	public void adicionarPlaneta(Planeta planeta) {
-		this.planetaRepository.save(planeta);
+		Planeta planetaSalvo = this.planetaRepository.save(planeta);
+		
+		SwapiPlanetMessage message = new SwapiPlanetMessage();
+		message.setId(planetaSalvo.getId());
+		publisher.send(message);
+
 	}
 
 	@Override
-	public void removerPlaneta(Long id) {
-		Optional<Planeta> op = this.planetaRepository.findById(new BigInteger(id.toString()));
+	public void removerPlaneta(BigInteger id) {
+		Optional<Planeta> op = this.planetaRepository.findById(id);
 		if (op.isPresent()) {
 			this.planetaRepository.delete(op.get());
 		}
@@ -46,8 +56,8 @@ public class PlanetaServiceImpl implements PlanetaService {
 	}
 
 	@Override
-	public Planeta buscarPorId(Long id) {
-		Optional<Planeta> op = this.planetaRepository.findById(new BigInteger(id.toString()));
+	public Planeta buscarPorId(BigInteger id) {
+		Optional<Planeta> op = this.planetaRepository.findById(id);
 		if (op.isPresent()) {
 			return op.get();
 		} else {

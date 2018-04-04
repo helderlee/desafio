@@ -19,6 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import pro.helderlee.desafio.integration.PlanetaIntegration;
 import pro.helderlee.desafio.modelo.Planeta;
 import pro.helderlee.desafio.repository.PlanetaRepository;
 
@@ -80,6 +81,15 @@ public class DesafioApplicationTests {
 		p1 = this.planetaRepository.findById(new BigInteger("1"));
 		assertFalse(p1.isPresent());
 	}
+
+	/*
+	@Test
+	public void testIntegracaoSwapi() {
+		PlanetaIntegration integracao = new PlanetaIntegration();
+		Integer qtd = integracao.buscarNumeroAparicoesSwapiPorId(1L);
+		assertEquals(10, qtd.intValue());
+	}
+	*/
 
 	@After
 	public void tearDown() throws Exception {
