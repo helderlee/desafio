@@ -62,9 +62,8 @@ public class DesafioApplicationTests {
 	
 	@Test
 	public void testFindByNome() {
-		Planeta p1 = this.planetaRepository.findByNome("Tatooine");
-		assertNotNull(p1);
-		assertEquals("Tatooine", p1.getNome());
+		List<Planeta> lista = this.planetaRepository.findAllByNome("Tatooine");
+		assertEquals(1, lista.size());
 	}
 	
 	@Test
