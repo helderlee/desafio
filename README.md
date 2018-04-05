@@ -12,9 +12,9 @@ mvn spring-boot:run
 <p/>
 O teste pode ser feito com Postman:
 <p/>
-Listar planetas - método GET - http://localhost:8080/desafio/planetas
+<b>Listar planetas</b> - método GET - http://localhost:8080/desafio/planetas
 <p/>
-Adicionar planeta - método POST - http://localhost:8080/desafio/planetas
+<b>Adicionar planeta</b> - método POST - http://localhost:8080/desafio/planetas
 <p/>
 Selecione Body, raw e JSON (application/json)
 <p/>
@@ -27,8 +27,8 @@ Exemplo para preenchimento:
 	"terreno": "jungle, rainforests"
 }
 <p/>
-Buscar por nome - método GET - http://localhost:8080/desafio/planetas?nome={nome-a-pesquisar}
+<b>Buscar por nome</b> - método GET - http://localhost:8080/desafio/planetas?nome={nome-a-pesquisar}
 <p/>
-Buscar por ID - método GET - http://localhost:8080/desafio/planetas/{id}
+<b>Buscar por ID</b> - método GET - http://localhost:8080/desafio/planetas/{id}
 <p/>
-Remover planeta - método DELETE - http://localhost:8080/desafio/planetas/{id}
+<b>Remover planeta</b> - método DELETE - http://localhost:8080/desafio/planetas/{id}
