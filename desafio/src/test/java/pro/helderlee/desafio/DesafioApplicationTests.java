@@ -19,7 +19,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import pro.helderlee.desafio.integration.PlanetaIntegration;
 import pro.helderlee.desafio.modelo.Planeta;
 import pro.helderlee.desafio.repository.PlanetaRepository;
 
