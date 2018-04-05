@@ -4,6 +4,6 @@
 <p/>
 git clone https://github.com/helderlee/desafio.git
 <p/>
-2 - Execute com maven:
+2 - Execute com maven no diretório do pom.xml:
 <p/>
 mvn spring-boot:run
