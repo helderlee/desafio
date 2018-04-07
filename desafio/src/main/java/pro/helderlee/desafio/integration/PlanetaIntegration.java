@@ -32,6 +32,7 @@ public class PlanetaIntegration {
 			Map<String, Object> planetMap;
 			try {
 				planetMap = jsonToMap(jsonObject);
+				@SuppressWarnings("unchecked")
 				List<String> listaAparicoes = (List<String>) planetMap.get("films");
 				numero = listaAparicoes.size();
 			} catch (JSONException e) {
